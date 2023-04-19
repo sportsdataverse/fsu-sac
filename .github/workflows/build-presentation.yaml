@@ -12,15 +12,25 @@ name: Build Presentation
 
 jobs:
   build-presentation:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: 'ubuntu-latest',   r: 'release'}
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_KEEP_PKG_SOURCE: yes
     steps:
       - uses: actions/checkout@v3
 
-      - uses: r-lib/actions/setup-pandoc@v2
+      - name: Setting up R
+        uses: r-lib/actions/setup-r@v2
         with:
-          pandoc-version: "3.0.1"
+          r-version: ${{ matrix.config.r }}
+          http-user-agent: ${{ matrix.config.http-user-agent }}
+          use-public-rspm: true
+      - uses: r-lib/actions/setup-pandoc@v2
 
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
@@ -29,12 +39,9 @@ jobs:
           quarto --version
           quarto install extension quarto-ext/fontawesome --no-prompt
 
-      - uses: r-lib/actions/setup-r@v2
-        with:
-          use-public-rspm: true
-
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
+          cache-version: 1
           extra-packages: |
             quarto-dev/quarto-r
 
