@@ -18,6 +18,7 @@ URL: https://github.com/saiemgilani/ssas/,
 BugReports: https://github.com/saiemgilani/ssas/issues
 Depends:
     dplyr,
+    forcats,
     fs,
     ggalluvial,
     ggtext,
@@ -37,5 +38,5 @@ Remotes:
     sportsdataverse/oddsapiR,
     sportsdataverse/sportyR,
     BillPetti/baseballr,
-    jaseziv/worldfootballR
+    jaseziv/worldfootballR,
     hadley/emo

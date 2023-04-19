@@ -9,6 +9,7 @@ library(dplyr)
 library(tidyr)
 library(purrr)
 library(glue)
+library(forcats)
 
 years <- 2020:cfbfastR:::most_recent_cfb_season()
 
