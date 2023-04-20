@@ -20,7 +20,10 @@ execute:
   echo: true
   eval: false
 ---
-
+```{r setup, include=FALSE}
+if (!require("pak")) install.packages("pak")
+pak::pak("hadley/emo")
+```
 ## FSU Sports Analytics Series {style="text-align: center;"}
 
 ::: {style="text-align: center;"}
