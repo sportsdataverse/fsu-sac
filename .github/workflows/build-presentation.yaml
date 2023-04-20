@@ -46,6 +46,11 @@ jobs:
           extra-packages: |
             quarto-dev/quarto-r
 
+      - name: Install system dependencies
+        run: |
+          pak::pkg_install("hadley/emo")
+        shell: Rscript {0}
+        
       - name: Render slides
         run: |
           options(crayon.enabled = TRUE)
