@@ -8,7 +8,7 @@
 <link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.80">
+  <meta name="generator" content="quarto-1.4.169">
 
   <title>FSU Sports Analytics Series</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -156,7 +156,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -662,7 +663,7 @@
 <section id="questions" class="slide level2" style="text-align: center;">
 <h2>Questions?</h2>
 <div class="footer footer-default">
-<p>Slides link <a href="https://fsusac.sportsdataverse.org/" target="_blank"><code>fsusac.sportsdataverse.org</code></a> | <a href="https://github.com/sportsdataverse/fsu-sac/" target="_blank">Source code</a> | Author: Saiem Gilani <img data-src="https://img.shields.io/github/followers/saiemgilani?color=eee&amp;label=@saiemgilani&amp;logo=github&amp;style=for-the-badge.png" target="_blank"></p>
+<p>Slides link <a href="https://fsusac.sportsdataverse.org/" target="_blank"><code>fsusac.sportsdataverse.org</code></a> | <a href="https://github.com/sportsdataverse/fsu-sac/" target="_blank">Source code</a> | Author: Saiem Gilani <img data-src="https://img.shields.io/github/followers/saiemgilani?color=eee&amp;label=%40saiemgilani&amp;logo=github&amp;style=for-the-badge.png" target="_blank"></p>
 </div>
 </section>
     </div>
@@ -990,10 +991,9 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1003,8 +1003,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
