@@ -6,8 +6,8 @@
 <script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-dark-7a0e04ec82617701cd34937292aa414e.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.13">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-dark-e8081235c61642a37fe37bc7c8ac307a.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.14">
 
   <title>FSU Sports Analytics Series</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-80857c6fe5916a20fd3014a757e04d57.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-f0b1970359cd8ff102202aa68fd0c49b.css">
   <link rel="stylesheet" href="style.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -259,7 +259,7 @@
 <div>
 <ul>
 <li class="fragment"><p>A community of developers committed to developing and maintaining open-source sports data packages and pipelines as on-going public utilities<br>
-👥 + 💬 + 👩‍💻 + 📦</p></li>
+👥 + 💬 + 👨‍💻 + 📦</p></li>
 <li class="fragment"><p>A set of corresponding data repositories which allow fast loading of the data for users and collectively form one of the largest open-source sports data resources with <strong>over 250Gb of data produced</strong> from the packages I contribute to<br>
 🔑 + 👑</p></li>
 <li class="fragment"><p>Our organization helps establish the bench of developers from diverse backgrounds to spearhead projects and make contributions</p></li>
@@ -697,44 +697,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
