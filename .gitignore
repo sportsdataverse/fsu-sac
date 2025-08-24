@@ -42,3 +42,5 @@ vignettes/*.pdf
 /.quarto/
 
 example-slides.qmd
+
+**/*.quarto_ipynb
